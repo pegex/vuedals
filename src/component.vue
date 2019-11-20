@@ -11,6 +11,7 @@ export default {
                 title: null,
                 dismissable: true,
                 name: '',
+                classes: '',
                 size: 'md',
                 escapable: false,
                 closeOnBackdrop: true,
@@ -178,9 +179,12 @@ export default {
 
         // Get css classes
         getCssClasses(index) {
+          console.log('index');
+          console.log(index);
             const vuedal = this.vuedals[index];
+            console.log(JSON.stringify(vuedal));
 
-            let classNames = vuedal.name +' '+ vuedal.size;
+            let classNames = vuedal.name +' '+ vuedal.size +' '+ vuedal.classes;
 
             if (index < this.$last)
                 classNames += ' disabled';
